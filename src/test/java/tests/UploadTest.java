@@ -7,19 +7,20 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class UploadTest extends BaseTest{
+public class UploadTest extends BaseTest {
     private HomePage homePage;
 
     @BeforeClass
     @Override
-    public void beforeClass(){
+    public void beforeClass() {
         super.beforeClass();
-        homePage = new HomePage(driver,driverWait);
+        homePage = new HomePage(driver, driverWait);
     }
+
     @Test
-    public void uploadTest(){
+    public void uploadTest() {
         homePage.upload();
-        driverWait.until(ExpectedConditions.visibilityOf(homePage.link()));
+        homePage.driverWait(homePage.link());
         Assert.assertTrue(homePage.link().getText().contains("file.io"));
     }
 }
