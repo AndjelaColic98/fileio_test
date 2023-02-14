@@ -1,11 +1,10 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class UploadTest extends BaseTest {
+public class SignupTest extends BaseTest{
     private HomePage homePage;
 
     @BeforeClass
@@ -16,9 +15,7 @@ public class UploadTest extends BaseTest {
     }
 
     @Test
-    public void uploadTest() {
-        homePage.upload();
-        homePage.driverWait(homePage.link());
-        Assert.assertTrue(homePage.link().getText().contains("file.io"));
+    public void signUp() {
+        homePage.signUp();
     }
 }

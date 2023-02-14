@@ -11,6 +11,8 @@ public class HomePage extends BasePage{
         private WebElement uploadFilesBtn;
         @FindBy(xpath = "//*[@id=\"gatsby-focus-wrapper\"]/div[3]/div/div[3]/div/div[2]/div[2]/div/div/div/div[2]/div[1]/div/div[1]/div[2]/div")
         private WebElement link;
+        @FindBy(xpath = "//*[@id=\"gatsby-focus-wrapper\"]/div[3]/div/div[2]/div[1]/div/nav[2]/a[4]")
+        private WebElement singUpBtn;
 
     public HomePage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
@@ -23,5 +25,8 @@ public class HomePage extends BasePage{
     }
     public void driverWait(WebElement element){
         driverWait.until(ExpectedConditions.visibilityOf(element));
+    }
+    public void signUp(){
+        singUpBtn.click();
     }
 }
