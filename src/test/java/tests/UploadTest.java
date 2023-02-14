@@ -18,7 +18,7 @@ public class UploadTest extends BaseTest {
     @Test
     public void uploadTest() {
         homePage.upload();
-        homePage.driverWait(homePage.link());
+        homePage.driverWaitVisibility(homePage.link());
         Assert.assertTrue(homePage.link().getText().contains("file.io"));
     }
 }
